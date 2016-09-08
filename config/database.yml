@@ -1,0 +1,22 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: live_data_rails_development
+
+
+test:
+  <<: *default
+  database: live_data_rails_test
+
+production:
+  <<: *default
+  database: live_data_rails_production
+  username: live_data_rails
+  password: <%= ENV['LIVE_DATA_RAILS_DATABASE_PASSWORD'] %>

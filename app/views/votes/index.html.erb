@@ -1,0 +1,18 @@
+<div class="main-container">
+  <h1>Vote for best color.</h1>
+
+  <div id="vote-counter">
+    <h3>Choose!</h3>
+    <p>Red Team: <span id="red-count"><%= @votes[0] %></span></p>
+    <p>Blue Team: <span id="blue-count"><%= @votes[1] %></span></p>
+  </div>
+
+  <div id="voting-box">
+    <%= link_to 'Vote Red', votes_path(vote: {color: 'red'}), {remote: true, method: :post, class: 'vote-button red' } %>
+    <%= link_to 'Vote Blue', votes_path(vote: {color: 'blue'}), {remote: true, method: :post, class: 'vote-button blue' } %>
+  </div>
+</div>
+
+<div id="plot-container">
+  <svg id="plot"></svg>
+</div>

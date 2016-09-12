@@ -1,4 +1,4 @@
-## Meal Tracker in Angular JS
+## D3 Tutorial Project
 
 #### By Colin Kingen, 2016
 
